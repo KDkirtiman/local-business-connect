@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import LBCCard from './Components/Card/Card';
+import LBCLabel from './Components/Label/Label';
 
 function App() {
   return (
@@ -9,14 +11,11 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <LBCCard sx={{backgroundColor: "#80bfff", color: "#fff"}}>
+          <LBCLabel variant={"h3"}>
+            This is Label Component.
+          </LBCLabel>
+        </LBCCard>
       </header>
     </div>
   );
