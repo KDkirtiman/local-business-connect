@@ -1,11 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { Typography } from '@mui/material';
-
-const Label = styled(Typography)`
-    color: red;
-`
+import Label from './Label.styled';
 
 function LBCLabel (props) {
     return (
@@ -105,6 +100,6 @@ LBCLabel.propTypes = {
      * }
      */
     variantMapping: PropTypes.object,
-  };
+};
 
 export default LBCLabel;

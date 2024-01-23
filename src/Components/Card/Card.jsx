@@ -41,6 +41,6 @@ LBCCard.propTypes /* remove-proptypes */ = {
       PropTypes.func,
       PropTypes.object,
     ]),
-  };
+};
 
 export default LBCCard;
