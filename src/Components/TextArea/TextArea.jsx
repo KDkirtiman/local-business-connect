@@ -1,12 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import TextArea from './TextArea.styled';
 import { refType } from '@mui/utils';
-import { TextField } from '@mui/material';
-
-const TextArea = styled(TextField)`
-padding: 10px;
-`;
 
 function LBCTextArea(props) {
     return (
