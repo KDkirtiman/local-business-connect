@@ -13,7 +13,7 @@ const HomePage = () => {
         setDisplayLogin(true);
     }
 
-    const onOverlayClose = () => {
+    const onOverlayClose = (value) => {
         setDisplayLogin(false);
     }
     
@@ -22,14 +22,12 @@ const HomePage = () => {
             <LBCLabel variant={"h4"} align={"left"}>
                 Welcome to the Local Business Connect.
             </LBCLabel>
-            <LBCButton label={"Home"} variant={"outlined"} color={"primary"} onClick={handleLogin}>
+            <LBCButton label={"Home"} variant={"outlined"} color={"primary"} onClick={(event)=>handleLogin(event)}>
                 Go To Home
             </LBCButton>
-            <LBCOverlay open={displayLogin} onClose={onOverlayClose}>
-                <DialogTitle>
-                    Login Please !!!
-                </DialogTitle>
-            </LBCOverlay>
+            {displayLogin && <LBCOverlay open={displayLogin} onClose={onOverlayClose} title={'Login'}>
+                Login Please !!!
+            </LBCOverlay>}
         </LBCCard>
     );
 }
