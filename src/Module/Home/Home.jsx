@@ -35,7 +35,9 @@ const HomePage = () => {
                     classNameOverlayTitle={'classNameOverlayTitle'}
                     styleOverlayTitle={{fontSize: '2em'}}
                 >
-                    Login Please !!!
+                    <LBCCard style={{backgroundColor: 'transparent'}}>
+                        Login !!!
+                    </LBCCard>
                 </LBCOverlay>
             }
         </LBCCard>

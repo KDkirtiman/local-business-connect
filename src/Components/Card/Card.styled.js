@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { Card } from '@mui/material';
 
-const DefaultCard = styled(Card)`
+const DefaultCard = styled.div`
 	padding: 10px 10px 10px 10px;
+	background-color: #275561;
 `;
 
 export default DefaultCard;

@@ -5,3 +5,7 @@
 .classNameOverlayTitle {
     font-size: 1em;
 }
+
+.card-main {
+    background-color: transparent;
+}
