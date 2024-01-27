@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import './Home.styles.css';
 import LBCCard from "../../Components/Card/Card";
 import LBCLabel from "../../Components/Label/Label";
 import LBCOverlay from "../../Components/Overlay/Overlay";
 import LBCButton from "../../Components/Button/Button";
-import { DialogTitle } from "@mui/material";
+
 
 const HomePage = () => {
 
@@ -25,9 +26,18 @@ const HomePage = () => {
             <LBCButton label={"Home"} variant={"outlined"} color={"primary"} onClick={(event)=>handleLogin(event)}>
                 Go To Home
             </LBCButton>
-            {displayLogin && <LBCOverlay open={displayLogin} onClose={onOverlayClose} title={'Login'}>
-                Login Please !!!
-            </LBCOverlay>}
+            {displayLogin &&
+                <LBCOverlay
+                    open={displayLogin}
+                    onClose={onOverlayClose}
+                    title={'Login'}
+                    classNameOverlay={'classNameOverlay'}
+                    classNameOverlayTitle={'classNameOverlayTitle'}
+                    styleOverlayTitle={{fontSize: '2em'}}
+                >
+                    Login Please !!!
+                </LBCOverlay>
+            }
         </LBCCard>
     );
 }
