@@ -30,6 +30,10 @@ LBCOverlay.propTypes= {
   */
   open: PropTypes.bool,
   /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
   * Callback function called when the Overlay is closed.
   */
   onClose: PropTypes.func,
