@@ -1,0 +1,28 @@
+/* Modal Content */
+.overlay-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 1em;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.overlay-close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.overlay-close:hover,
+.overlay-close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.overlay_title {
+  color: #000;
+  font-size: 2em;
+  font-family: Arial, Helvetica, sans-serif;
+}
