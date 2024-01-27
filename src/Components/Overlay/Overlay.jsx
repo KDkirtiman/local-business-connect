@@ -13,9 +13,9 @@ function LBCOverlay(props) {
 
   return (
     <Overlay id='overlay_main_div' {...props} onClick={onClickOutside}>
-      <div className="overlay-content">
+      <div style={props.styleOverlay} className={`${props.classNameOverlay} overlay-content`}>
         <span className="overlay-close" onClick={(event)=>props.onClose(event)}>&times;</span>
-        <div id='overlay_title' className="overlay_title">
+        <div id='overlay_title' style={props.styleOverlayTitle} className={`${props.classNameOverlayTitle} overlay_title` }>
           {props.title}
         </div>
         {props.children}
@@ -25,6 +25,34 @@ function LBCOverlay(props) {
 }
 
 LBCOverlay.propTypes= {
+  /**
+  * Boolean value to display the Overlay Component
+  */
+  open: PropTypes.bool,
+  /**
+  * Callback function called when the Overlay is closed.
+  */
+  onClose: PropTypes.func,
+  /**
+  * Provides the Title to the Overlay Component.
+  */
+  title: PropTypes.string,
+  /**
+  * Override or extend the styles applied to the Overlay Content Div.
+  */
+  classNameOverlay: PropTypes.string,
+  /**
+  * extend the styles applied to the Overlay Title Div.
+  */
+  classNameOverlayTitle: PropTypes.string,
+  /**
+  * Override the styles applied to the Overlay Title Div.
+  */
+  styleOverlayTitle: PropTypes.object,
+  /**
+  * Override the styles applied to the Overlay Content Div.
+  */
+  styleOverlay: PropTypes.object,
 };  
 
 export default LBCOverlay;
