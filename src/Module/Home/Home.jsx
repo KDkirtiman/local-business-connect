@@ -7,6 +7,7 @@ import LBCButton from "../../Components/Button/Button";
 import LBCHeading from "../../Components/Heading/Heading";
 import LBCTextField from "../../Components/TextField/TextField";
 import LBCTextArea from "../../Components/TextArea/TextArea";
+import LBCDropdown from "../../Components/Dropdown/Dropdown";
 
 
 const HomePage = () => {
@@ -32,6 +33,13 @@ const HomePage = () => {
         setDisplayTextArea(event.target.value);
     }
     
+    const object1 = {
+        label: 'Hyundai',
+        optionList: ['Creta','Exter','i20']
+    };
+
+    const dropDownList = [object1,object1];
+    
     return (
         <LBCCard>
             <LBCHeading variant={'h6'} style={{textAlign: "left"}}>
@@ -42,6 +50,9 @@ const HomePage = () => {
             </LBCLabel>
             <div>
                 <LBCTextArea onChange={onTextAreaChange} value={displayTextArea}/>
+            </div>
+            <div>
+                <LBCDropdown variant='optionGroup' dropDownList={dropDownList}/>
             </div>
             <LBCButton label={"Home"} variant={"submit"} onClick={(event)=>handleLogin(event)}/>
             {displayLogin &&
