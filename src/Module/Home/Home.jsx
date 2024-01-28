@@ -6,12 +6,14 @@ import LBCOverlay from "../../Components/Overlay/Overlay";
 import LBCButton from "../../Components/Button/Button";
 import LBCHeading from "../../Components/Heading/Heading";
 import LBCTextField from "../../Components/TextField/TextField";
+import LBCTextArea from "../../Components/TextArea/TextArea";
 
 
 const HomePage = () => {
 
     const [displayLogin, setDisplayLogin] = useState(false);
     const [displayTextFIeld, setDisplayTextField] = useState('');
+    const [displayTextArea, setDisplayTextArea] = useState('');
 
     const handleLogin = (value) => {
         setDisplayLogin(true);
@@ -24,6 +26,11 @@ const HomePage = () => {
     const onTextFieldChange = (event) => {
         setDisplayTextField(event.target.value);
     }
+
+    const onTextAreaChange = (event) => {
+        console.log(event.target.value);
+        setDisplayTextArea(event.target.value);
+    }
     
     return (
         <LBCCard>
@@ -33,6 +40,9 @@ const HomePage = () => {
             <LBCLabel style={{textAlign: "left"}}>
                 Welcome to the Label Component.
             </LBCLabel>
+            <div>
+                <LBCTextArea onChange={onTextAreaChange}/>
+            </div>
             <LBCButton label={"Home"} variant={"outlined"} color={"primary"} onClick={(event)=>handleLogin(event)}>
                 Go To Home
             </LBCButton>

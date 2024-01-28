@@ -26,6 +26,10 @@ LBCTextField.propTypes = {
    */
   value: PropTypes.string,
   /**
+   * Callback function whenever the value changes.
+   */
+  onChange: PropTypes.func,
+  /**
    * Override the styles applied to the component.
    */
   style: PropTypes.object,
