@@ -20,7 +20,7 @@ const HomePage = () => {
     
     return (
         <LBCCard>
-            <LBCLabel variant={"h4"} align={"left"}>
+            <LBCLabel variant={'h6'} align={"left"}>
                 Welcome to the Local Business Connect.
             </LBCLabel>
             <LBCButton label={"Home"} variant={"outlined"} color={"primary"} onClick={(event)=>handleLogin(event)}>

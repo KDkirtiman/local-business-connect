@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Label from './Label.styled';
+import './Label.style.css';
 
-function LBCLabel (props) {
-    return (
-        <Label {...props}/>
-    )
+function LBCLabel ({variant='h1',...props}) {
+
+  return (
+    <Label {...props}>
+      <span className={variant}>{props.children}</span>
+    </Label>
+  )
 }
 
 LBCLabel.propTypes = {
