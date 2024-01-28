@@ -19,7 +19,7 @@ LBCLabel.propTypes = {
   /**
    * Override the styles applied to the component.
    */
-  class: PropTypes.object,
+  style: PropTypes.object,
   /**
    * Extend the styles applied to the component.
    */

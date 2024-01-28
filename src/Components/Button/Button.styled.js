@@ -1,6 +1,5 @@
-import { Button } from "@mui/material";
 import styled from "styled-components";
 
-const BtnButton = styled(Button)``;
+const BtnButton = styled.button``;
 
 export default BtnButton;
