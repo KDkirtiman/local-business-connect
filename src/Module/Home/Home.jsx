@@ -4,6 +4,7 @@ import LBCCard from "../../Components/Card/Card";
 import LBCLabel from "../../Components/Label/Label";
 import LBCOverlay from "../../Components/Overlay/Overlay";
 import LBCButton from "../../Components/Button/Button";
+import LBCHeading from "../../Components/Heading/Heading";
 
 
 const HomePage = () => {
@@ -20,8 +21,11 @@ const HomePage = () => {
     
     return (
         <LBCCard>
-            <LBCLabel variant={'h6'} align={"left"}>
+            <LBCHeading variant={'h6'} align={"left"}>
                 Welcome to the Local Business Connect.
+            </LBCHeading>
+            <LBCLabel style={{textAlign: "left"}}>
+                Welcome to the Label Component.
             </LBCLabel>
             <LBCButton label={"Home"} variant={"outlined"} color={"primary"} onClick={(event)=>handleLogin(event)}>
                 Go To Home
