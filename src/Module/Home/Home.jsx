@@ -41,11 +41,9 @@ const HomePage = () => {
                 Welcome to the Label Component.
             </LBCLabel>
             <div>
-                <LBCTextArea onChange={onTextAreaChange}/>
+                <LBCTextArea onChange={onTextAreaChange} value={displayTextArea}/>
             </div>
-            <LBCButton label={"Home"} variant={"outlined"} color={"primary"} onClick={(event)=>handleLogin(event)}>
-                Go To Home
-            </LBCButton>
+            <LBCButton label={"Home"} variant={"submit"} onClick={(event)=>handleLogin(event)}/>
             {displayLogin &&
                 <LBCOverlay
                     open={displayLogin}
