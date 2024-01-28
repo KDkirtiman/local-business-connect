@@ -5,11 +5,13 @@ import LBCLabel from "../../Components/Label/Label";
 import LBCOverlay from "../../Components/Overlay/Overlay";
 import LBCButton from "../../Components/Button/Button";
 import LBCHeading from "../../Components/Heading/Heading";
+import LBCTextField from "../../Components/TextField/TextField";
 
 
 const HomePage = () => {
 
     const [displayLogin, setDisplayLogin] = useState(false);
+    const [displayTextFIeld, setDisplayTextField] = useState('');
 
     const handleLogin = (value) => {
         setDisplayLogin(true);
@@ -18,10 +20,14 @@ const HomePage = () => {
     const onOverlayClose = (value) => {
         setDisplayLogin(false);
     }
+
+    const onTextFieldChange = (event) => {
+        setDisplayTextField(event.target.value);
+    }
     
     return (
         <LBCCard>
-            <LBCHeading variant={'h6'} align={"left"}>
+            <LBCHeading variant={'h6'} style={{textAlign: "left"}}>
                 Welcome to the Local Business Connect.
             </LBCHeading>
             <LBCLabel style={{textAlign: "left"}}>
@@ -35,13 +41,16 @@ const HomePage = () => {
                     open={displayLogin}
                     onClose={onOverlayClose}
                     title={'Login'}
-                    classNameOverlay={'classNameOverlay'}
-                    classNameOverlayTitle={'classNameOverlayTitle'}
-                    styleOverlayTitle={{fontSize: '2em'}}
+                    class_name_overlay={'overlay-main'}
+                    class_name_overlay_title={'overlay-title'}
+                    style_overlay_title={{fontSize: '2em'}}
                 >
-                    <LBCCard style={{backgroundColor: 'transparent'}}>
-                        Login !!!
-                    </LBCCard>
+                    <div>
+                    <LBCLabel style={{textAlign: "left"}} >
+                        UserName : 
+                    </LBCLabel>
+                    <LBCTextField placeholder={'User Name !!!'} value={displayTextFIeld} onChange={onTextFieldChange}/>
+                    </div>
                 </LBCOverlay>
             }
         </LBCCard>
