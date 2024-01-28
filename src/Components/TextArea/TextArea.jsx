@@ -9,9 +9,8 @@ function LBCTextArea(props) {
           className={props.className}
           onChange={props.onChange}
           placeholder={props.placeholder ? props.placeholder : 'Input Value'}
-        >
-          {props.value}
-        </TextArea>
+          value={props.value}
+        />
     )
 }
 
