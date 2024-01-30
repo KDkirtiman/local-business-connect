@@ -1,16 +1,14 @@
-import React, { useState } from "react";
-import './Home.styles.css';
+import React, {useState} from "react";
 import LBCCard from "../../Components/Card/Card";
-import LBCLabel from "../../Components/Label/Label";
-import LBCOverlay from "../../Components/Overlay/Overlay";
-import LBCButton from "../../Components/Button/Button";
 import LBCHeading from "../../Components/Heading/Heading";
-import LBCTextField from "../../Components/TextField/TextField";
+import LBCLabel from "../../Components/Label/Label";
 import LBCTextArea from "../../Components/TextArea/TextArea";
 import LBCDropdown from "../../Components/Dropdown/Dropdown";
+import LBCButton from "../../Components/Button/Button";
+import LBCOverlay from "../../Components/Overlay/Overlay";
+import LBCTextField from "../../Components/TextField/TextField";
 
-
-const HomePage = () => {
+const ComponentCheck = () => {
 
     const [displayLogin, setDisplayLogin] = useState(false);
     const [displayTextFIeld, setDisplayTextField] = useState('');
@@ -76,4 +74,4 @@ const HomePage = () => {
     );
 }
 
-export default HomePage;
+export default ComponentCheck;
