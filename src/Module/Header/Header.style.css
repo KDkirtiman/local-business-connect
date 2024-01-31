@@ -1,0 +1,13 @@
+.header-div-main {
+    display: flex;
+}
+
+.header-div-home {
+    flex: 5;
+
+}
+
+.header-login-main {
+    display: flex;
+    flex: 2
+}

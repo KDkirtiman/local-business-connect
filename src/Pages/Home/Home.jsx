@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './Home.styles.css';
 import LBCCard from "../../Components/Card/Card";
+import { Header } from "../../Module/Header/Header";
 
 function HomePage (props) {
   
@@ -8,7 +9,7 @@ function HomePage (props) {
     
 	return(<>
 		<LBCCard>
-			<h1>Header Component</h1>
+			<Header/>
 			<h1>Content Component</h1>
 			<h1>Footer Component</h1>
 		</LBCCard>
