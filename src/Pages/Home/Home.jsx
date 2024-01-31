@@ -8,8 +8,8 @@ function HomePage (props) {
 	const [displayLogin, setDisplayLogin] = useState(false);
     
 	return(<>
+		<Header/>
 		<LBCCard>
-			<Header/>
 			<h1>Content Component</h1>
 			<h1>Footer Component</h1>
 		</LBCCard>
