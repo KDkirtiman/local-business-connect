@@ -1,7 +1,7 @@
 .header-div-main {
   display: flex;
   border: 0.1em solid #abd6d8;
-  border-radius: 0.3em;
+  border-radius: 0.8em;
   position: relative;
   top: 1em;
   padding: 0.2em;
@@ -24,14 +24,13 @@
   border: 0.1em solid;
   border-radius: 0.5em;
   font-weight: 700;
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-family: cursive;
   color: floralwhite;
   background: transparent;
 }
 
-.btn:hover,
-.btn:focus {
+.btn:hover {
   color: #275561;
   background-color: #fff;
   border: 0.1em solid #abd6d8;
@@ -40,5 +39,5 @@
 }
 
 .btn-login {
-  margin-right: 0.2em;
+  margin: 0 0.2em;
 }
