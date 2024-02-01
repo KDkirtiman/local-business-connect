@@ -11,7 +11,7 @@ function Header(props) {
             </div>
             <div className='header-login-main'>
                 <LBCButton onClick={(event)=>props.onClickLogin(event)} className={`btn btn-login`} label={'LogIn'}/>
-                <LBCButton className={'btn'} label={'SignUp'}/>
+                <LBCButton onClick={(event)=>props.onClickSignUp(event)} className={'btn'} label={'SignUp'}/>
             </div>
         </div>
     )
