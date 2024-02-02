@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RadioButton from './Radiobutton.styled';
 import RadioButtonLabel from './RadiobuttonLabel.styled';
+import Checkbox from './Checkbox.styled';
+import CheckboxLabel from './CheckboxLabel.styled';
 
-function LBCRadioButton({ optionsList=[], ...props}) {
+function LBCCheckBox({ optionsList=[], ...props}) {
 
   return (<>
     {
@@ -11,16 +13,16 @@ function LBCRadioButton({ optionsList=[], ...props}) {
         optionsList.map((item)=>{
           return (
             <div style={props.style} className={props.className}>
-              <RadioButton
+              <Checkbox
                 type='radio'
-                style={props.styleRadioButton}
-                className={props.classNameRadioButton}
+                style={props.styleCheckBox}
+                className={props.classNameCheckBox}
                 value={item.value}
-                name={props.name}
+                name={item.name}
                 checked={item.checked}
                 onChange={props.onSelect}
               />
-              <RadioButtonLabel style={props.styleLabel} className={props.classNameLabel}>{item.label}</RadioButtonLabel>
+              <CheckboxLabel style={props.styleLabel} className={props.classNameLabel}>{item.label}</CheckboxLabel>
             </div>
           )
         })
@@ -28,19 +30,16 @@ function LBCRadioButton({ optionsList=[], ...props}) {
   </>); 
 }
 
-LBCRadioButton.propTypes = {
+LBCCheckBox.propTypes = {
   /**
   * Array of Objects to be displayed as radio buttons.
   */
   optionsList: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string.isRequired,
     checked: PropTypes.bool.isRequired,
-    value: PropTypes.string.isRequired
+    value: PropTypes.string.isRequired,
+    name: PropTypes.string,
   })),
-  /**
-   * The group the radio buttons will be grouped into.
-   */
-  name: PropTypes.string,
   /**
   * Callback function called when the radio button is selected.
   */
@@ -52,7 +51,7 @@ LBCRadioButton.propTypes = {
   /**
   * extend the styles applied to the Radio Input Tag.
   */
-  classNameRadioButton: PropTypes.string,
+  classNameCheckBox: PropTypes.string,
   /**
   * extend the styles applied to the Radio Button Label.
   */
@@ -68,7 +67,7 @@ LBCRadioButton.propTypes = {
   /**
   * Override the styles applied to the Radio Input Tag.
   */
-  styleRadioButton: PropTypes.object,
+  styleCheckBox: PropTypes.object,
 };  
 
-export default LBCRadioButton;
+export default LBCCheckBox;
