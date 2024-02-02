@@ -8,6 +8,7 @@ import LBCButton from "../../Components/Button/Button";
 import LBCOverlay from "../../Components/Overlay/Overlay";
 import LBCTextField from "../../Components/TextField/TextField";
 import LBCRadioButton from "../../Components/Radiobutton/Radiobutton";
+import LBCCheckBox from "../../Components/Checkbox/Checkbox";
 
 const ComponentCheck = () => {
 
@@ -70,6 +71,7 @@ const ComponentCheck = () => {
                 <LBCDropdown variant='optionGroup' dropDownList={dropDownList}/>
             </div>
             <LBCRadioButton optionsList={optionsList} multiple={true}/>
+            <LBCCheckBox optionsList={optionsList} multiple={true}/>
             <LBCButton label={"Home"} variant={"submit"} onClick={(event)=>handleLogin(event)}/>
             {displayLogin &&
                 <LBCOverlay
