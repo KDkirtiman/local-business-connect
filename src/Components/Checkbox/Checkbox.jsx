@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import RadioButton from './Radiobutton.styled';
-import RadioButtonLabel from './RadiobuttonLabel.styled';
 import Checkbox from './Checkbox.styled';
 import CheckboxLabel from './CheckboxLabel.styled';
 
@@ -14,7 +12,7 @@ function LBCCheckBox({ optionsList=[], ...props}) {
           return (
             <div style={props.style} className={props.className}>
               <Checkbox
-                type='radio'
+                type='checkbox'
                 style={props.styleCheckBox}
                 className={props.classNameCheckBox}
                 value={item.value}
@@ -41,31 +39,31 @@ LBCCheckBox.propTypes = {
     name: PropTypes.string,
   })),
   /**
-  * Callback function called when the radio button is selected.
+  * Callback function called when the Checkbox is selected.
   */
   onSelect: PropTypes.func,
   /**
-  * Override or extend the styles applied to the Radio Button Div.
+  * Override or extend the styles applied to the Checkbox Div.
   */
   className: PropTypes.string,
   /**
-  * extend the styles applied to the Radio Input Tag.
+  * extend the styles applied to the Checkbox Input Tag.
   */
   classNameCheckBox: PropTypes.string,
   /**
-  * extend the styles applied to the Radio Button Label.
+  * extend the styles applied to the Checkbox Label.
   */
   classNameLabel: PropTypes.string,
   /**
-  * Override the styles applied to the Radio Button Div.
+  * Override the styles applied to the Checkbox Div.
   */
   style: PropTypes.object,
   /**
-  * Override the styles applied to the Radio Button Label.
+  * Override the styles applied to the Checkbox Label.
   */
   styleLabel: PropTypes.object,
   /**
-  * Override the styles applied to the Radio Input Tag.
+  * Override the styles applied to the Checkbox Input Tag.
   */
   styleCheckBox: PropTypes.object,
 };  
