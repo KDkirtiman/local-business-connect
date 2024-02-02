@@ -7,6 +7,7 @@ import LBCDropdown from "../../Components/Dropdown/Dropdown";
 import LBCButton from "../../Components/Button/Button";
 import LBCOverlay from "../../Components/Overlay/Overlay";
 import LBCTextField from "../../Components/TextField/TextField";
+import LBCRadioButton from "../../Components/Radiobutton/Radiobutton";
 
 const ComponentCheck = () => {
 
@@ -37,6 +38,14 @@ const ComponentCheck = () => {
     };
 
     const dropDownList = [object1,object1];
+
+    const user = {
+        value: 'option1',
+        name: 'option1',
+        checked: false
+    };
+
+    const optionsList = [user];
     
     return (
         <LBCCard>
@@ -52,6 +61,7 @@ const ComponentCheck = () => {
             <div>
                 <LBCDropdown variant='optionGroup' dropDownList={dropDownList}/>
             </div>
+            <LBCRadioButton optionsList={optionsList}/>
             <LBCButton label={"Home"} variant={"submit"} onClick={(event)=>handleLogin(event)}/>
             {displayLogin &&
                 <LBCOverlay
