@@ -42,10 +42,18 @@ const ComponentCheck = () => {
     const user = {
         value: 'option1',
         name: 'option1',
+        label: 'option1',
         checked: false
     };
 
-    const optionsList = [user];
+    const user1 = {
+        value: 'option2',
+        name: 'option2',
+        label: 'option2',
+        checked: false
+    };
+
+    const optionsList = [user,user1];
     
     return (
         <LBCCard>
@@ -61,7 +69,7 @@ const ComponentCheck = () => {
             <div>
                 <LBCDropdown variant='optionGroup' dropDownList={dropDownList}/>
             </div>
-            <LBCRadioButton optionsList={optionsList}/>
+            <LBCRadioButton optionsList={optionsList} multiple={true}/>
             <LBCButton label={"Home"} variant={"submit"} onClick={(event)=>handleLogin(event)}/>
             {displayLogin &&
                 <LBCOverlay
