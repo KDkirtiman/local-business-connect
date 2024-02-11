@@ -18,6 +18,10 @@ function LoginOverlay (props) {
         setPassword(event.target.value);
     }
 
+    const handleLogin = () => {
+        console.log("User : %s is logged in",userName);
+    }
+
     return (
         <>
             <LBCOverlay {...props}>
@@ -43,7 +47,7 @@ function LoginOverlay (props) {
                     />
                 </PasswordDiv>
                 <AuthBtnWrapper>
-                    <AuthenticateButton label={"Authenticate"}/>
+                    <AuthenticateButton label={"Authenticate"} onClick={handleLogin}/>
                 </AuthBtnWrapper>
                 <div>Forget Password</div>
                 <div>Are you New User?</div>
