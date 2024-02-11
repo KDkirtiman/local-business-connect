@@ -5,7 +5,14 @@ import Textfield from './TextField.styled';
 function LBCTextField(props) {
   return (
     <div style={props.style} className={props.className}>
-      <Textfield onChange={props.onChange} placeholder={props.placeholder} value={props.value}>
+      <Textfield
+        type={props.type ? props.type : 'text'}
+        style={props.inputStyle}
+        className={props.inputClassName}
+        onChange={props.onChange}
+        placeholder={props.placeholder}
+        value={props.value}
+      >
         {props.children}
       </Textfield>
     </div>
@@ -37,6 +44,14 @@ LBCTextField.propTypes = {
    * Extend the styles applied to the component.
    */
   className: PropTypes.string,
+  /**
+   * Override the styles applied to the input tag.
+   */
+  inputStyle: PropTypes.object,
+  /**
+   * Extend the styles applied to the input tag.
+   */
+  inputClassName: PropTypes.string,
 };
 
 export default LBCTextField;

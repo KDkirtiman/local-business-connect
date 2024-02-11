@@ -1,0 +1,13 @@
+.label-div {
+    width: 30%;
+}
+
+.textfield-main {
+    margin-left: 1em;
+}
+
+.textfield-input {
+    border-radius: 0.7em;
+    font-family: cursive;
+    font-weight: bold;
+}
