@@ -3,7 +3,8 @@ import './Login.style.css';
 import LBCOverlay from "../../Components/Overlay/Overlay";
 import LBCLabel from "../../Components/Label/Label";
 import LBCTextField from "../../Components/TextField/TextField";
-import { PasswordDiv, UserNameDiv } from "./Login.styled";
+import { AuthBtnWrapper, AuthenticateButton, PasswordDiv, UserNameDiv } from "./Login.styled";
+import LBCButton from "../../Components/Button/Button";
 
 function LoginOverlay (props) {
     const [userName, setUserName] = useState('');
@@ -41,10 +42,10 @@ function LoginOverlay (props) {
                         onChange={onChangePassword}
                     />
                 </PasswordDiv>
-                <div>
-                    <div>Authenticate</div>
-                    <div>Cancel</div>
-                </div>
+                <AuthBtnWrapper>
+                    <AuthenticateButton label={"Authenticate"}/>
+                </AuthBtnWrapper>
+                <div>Forget Password</div>
                 <div>Are you New User?</div>
             </LBCOverlay>
         </>
