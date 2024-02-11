@@ -3,6 +3,7 @@ import './Home.styles.css';
 import LBCCard from "../../Components/Card/Card";
 import { Header } from "../../Module/Header/Header";
 import LBCOverlay from "../../Components/Overlay/Overlay";
+import { LoginOverlay } from "../../Module/Login/Login";
 
 function HomePage (props) {
   
@@ -33,12 +34,10 @@ function HomePage (props) {
 		</LBCCard>
 		<>
 			{displayLogin && 
-				<LBCOverlay style_overlay={{width:'30%'}} open={displayLogin} onClose={closeLogin} title={'Login !!!'}>
-				</LBCOverlay>
+				<LoginOverlay style_overlay={{width:'30%'}} open={displayLogin} onClose={closeLogin} title={'Login !!!'}/>
 			}
 			{displaySignUp &&
-				<LBCOverlay style_overlay={{width:'30%'}} open={displaySignUp} onClose={closeSignUp} title={'Sign Up'}>
-				</LBCOverlay>
+				<LBCOverlay style_overlay={{width:'30%'}} open={displaySignUp} onClose={closeSignUp} title={'Sign Up'}/>
 			}
 		</>
 	</>);
