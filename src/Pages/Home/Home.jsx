@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import './Home.styles.css';
 import LBCCard from "../../Components/Card/Card";
 import { Header } from "../../Module/Header/Header";
-import LBCOverlay from "../../Components/Overlay/Overlay";
 import { LoginOverlay } from "../../Module/Login/Login";
+import { useNavigate } from "react-router-dom";
 
 function HomePage (props) {
+
+	const navigate = useNavigate();
   
 	const [displayLogin, setDisplayLogin] = useState(false);
-	const [displaySignUp, setDisplaySignUp] = useState(false);
 
 	const handleLoginClick = () => {
 		setDisplayLogin(true);
@@ -18,21 +19,12 @@ function HomePage (props) {
 		setDisplayLogin(false);
 	}
 
-	const handleSignUpClick = () => {
-		setDisplaySignUp(true);
-	}
-
-	const closeSignUp = () => {
-		setDisplaySignUp(false);
-	}
-
 	const handleNewUserClick = () => {
-		setDisplayLogin(false);
-		setDisplaySignUp(true);
+		navigate('/registerUser');
 	}
 
 	return(<>
-		<Header isHomePage={true} onClickLogin={handleLoginClick} onClickSignUp={handleSignUpClick}/>
+		<Header isHomePage={true} onClickLogin={handleLoginClick} onClickSignUp={handleNewUserClick}/>
 		<LBCCard>
 			<h1>Content Component</h1>
 			<h1>Footer Component</h1>
@@ -46,9 +38,6 @@ function HomePage (props) {
 					title={'Login !!!'}
 					handleNewUserClick={handleNewUserClick}
 				/>
-			}
-			{displaySignUp &&
-				<LBCOverlay style_overlay={{width:'30%'}} open={displaySignUp} onClose={closeSignUp} title={'Sign Up'}/>
 			}
 		</>
 	</>);
