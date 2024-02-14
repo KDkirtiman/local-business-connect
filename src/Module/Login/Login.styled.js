@@ -41,4 +41,19 @@ const AuthBtnWrapper = styled.div`
     }
 `;
 
-export {UserNameDiv, PasswordDiv, AuthenticateButton, AuthBtnWrapper};
+const Span = styled.span`
+    color: #fff;
+
+    &:hover {
+        color: #4db8ff;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+`;
+
+const SpanWrapper = styled.div`
+    margin: 0.2em;
+
+`;
+
+export {UserNameDiv, PasswordDiv, AuthenticateButton, AuthBtnWrapper, Span, SpanWrapper};

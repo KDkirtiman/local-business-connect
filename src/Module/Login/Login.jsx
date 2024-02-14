@@ -3,8 +3,7 @@ import './Login.style.css';
 import LBCOverlay from "../../Components/Overlay/Overlay";
 import LBCLabel from "../../Components/Label/Label";
 import LBCTextField from "../../Components/TextField/TextField";
-import { AuthBtnWrapper, AuthenticateButton, PasswordDiv, UserNameDiv } from "./Login.styled";
-import LBCButton from "../../Components/Button/Button";
+import { AuthBtnWrapper, AuthenticateButton, PasswordDiv, Span, SpanWrapper, UserNameDiv } from "./Login.styled";
 import authenticateUser from "../../ApiRequest/AuthenticateUser/AuthenticateUser";
 import { useNavigate } from "react-router-dom";
 import { LBCErrorBox } from "../../Components/ErrorBox/ErrorBox";
@@ -25,17 +24,25 @@ function LoginOverlay (props) {
     }
 
     const handleLogin = async () => {
-        const response = await authenticateUser();
+        const response = await authenticateUser({userName, password});
         console.log("User : {} is logged in",response);
         if (!response || !response.transactionSuccess || response.error) {
             setDisplayErrorPopup(true);
         } else {
-            navigate("/practice");
+            navigate("/dashboard");
         }
     }
 
     const  closeErrorPopUp = () => {
         setDisplayErrorPopup(false);
+    }
+
+    const handleForgetButtonClick = () => {
+        navigate("/forgetCredential")
+    }
+
+    const handleNewUserClick = () => {
+        props.handleNewUserClick();
     }
 
     return (
@@ -66,8 +73,12 @@ function LoginOverlay (props) {
                     <AuthenticateButton label={"Authenticate"} onClick={handleLogin}/>
                 </AuthBtnWrapper>
                 { displayErrorPopup && <LBCErrorBox errorMsg={LBCCONSTANT.authenticateFailure} onClose={closeErrorPopUp} /> }
-                <div>Forget Password</div>
-                <div>Are you New User?</div>
+                <SpanWrapper>
+                    <Span onClick={handleForgetButtonClick}>Forget Username/Password</Span>
+                </SpanWrapper>
+                <SpanWrapper>
+                    <Span onClick={handleNewUserClick}>Are you New User? SignUp</Span>
+                </SpanWrapper>
             </LBCOverlay>
         </>
     );

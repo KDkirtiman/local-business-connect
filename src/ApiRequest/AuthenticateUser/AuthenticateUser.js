@@ -1,5 +1,5 @@
 
-const authenticateUser = async (payload={userName:'KDDE',password:'admin12345'}) => {
+const authenticateUser = async (payload={}) => {
     const response = await fetch('http://localhost:8085/authenticateUser',{
         method: 'POST',
         headers: {
