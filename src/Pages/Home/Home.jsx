@@ -26,6 +26,11 @@ function HomePage (props) {
 		setDisplaySignUp(false);
 	}
 
+	const handleNewUserClick = () => {
+		setDisplayLogin(false);
+		setDisplaySignUp(true);
+	}
+
 	return(<>
 		<Header isHomePage={true} onClickLogin={handleLoginClick} onClickSignUp={handleSignUpClick}/>
 		<LBCCard>
@@ -34,7 +39,13 @@ function HomePage (props) {
 		</LBCCard>
 		<>
 			{displayLogin && 
-				<LoginOverlay style_overlay={{width:'30%'}} open={displayLogin} onClose={closeLogin} title={'Login !!!'}/>
+				<LoginOverlay
+					style_overlay={{width:'30%'}}
+					open={displayLogin}
+					onClose={closeLogin}
+					title={'Login !!!'}
+					handleNewUserClick={handleNewUserClick}
+				/>
 			}
 			{displaySignUp &&
 				<LBCOverlay style_overlay={{width:'30%'}} open={displaySignUp} onClose={closeSignUp} title={'Sign Up'}/>

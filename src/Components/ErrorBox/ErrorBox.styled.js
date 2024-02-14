@@ -4,7 +4,7 @@ const ErrorBoxWrapper = styled.div`
     display: block;
     position: fixed;
     z-index: 1;
-    padding-top: 50px;
+    margin-top: 3em;
     left: 0px;
     top: 0px;
     width: 100%;
@@ -17,6 +17,8 @@ const ErrorBoxContent = styled.div`
     padding: 0 0.5em;
     width: 90%;
     background: white;
+    border: 0.2em solid #e60000;
+    border-radius: 1em;
 `;
 
 const fadein = keyframes`
@@ -26,7 +28,7 @@ const fadein = keyframes`
 
 const ErrorBox = styled.div`
     display: inline-block;
-    padding: 2em;
+    padding: 1em;
     width: 90%;
     color: red;
     margin: 0.5em 0;

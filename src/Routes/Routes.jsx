@@ -4,6 +4,7 @@ import HomePage from '../Pages/Home/Home';
 import ErrorRoutePage from '../Pages/Error/ErrorRoute';
 import ComponentCheck from '../Module/DeleteLater/ComponentCheck';
 import { RegisterUser } from '../Pages/RegisterUser/RegisterUser';
+import { ForgetUserCredentials } from '../Pages/ForgetUserCredentials/ForgetUserCredentials';
 
 const router = createBrowserRouter([
 	{
@@ -25,12 +26,12 @@ const router = createBrowserRouter([
 		path: "/registerUser",
 		element: <RegisterUser/>,
     	errorElement: <ErrorRoutePage />
-	}
-	// {
-	// 	path: "/profile",
-	// 	element: <Profile />,
-    // errorElement: <ErrorRoutePage />
-	// },
+	},
+	{
+		path: "/forgetCredential",
+		element: <ForgetUserCredentials />,
+    errorElement: <ErrorRoutePage />
+	},
 ]);
 
 export default router;
