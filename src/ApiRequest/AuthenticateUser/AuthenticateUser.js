@@ -1,6 +1,6 @@
 
 const authenticateUser = async (payload={}) => {
-    const response = await fetch('http://localhost:8085/authenticateUser',{
+    const response = await fetch('http://localhost:8085/authenticate/user',{
         method: 'POST',
         headers: {
             'Content-Type':'application/json',

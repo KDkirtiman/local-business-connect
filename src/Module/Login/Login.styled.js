@@ -8,6 +8,7 @@ const UserNameDiv = styled.div`
 
 const PasswordDiv = styled.div`
     display: flex;
+    margin-bottom: 0.5em;
 `;
 
 const AuthenticateButton = styled(LBCButton)`
