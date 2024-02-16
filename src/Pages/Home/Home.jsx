@@ -3,13 +3,13 @@ import './Home.styles.css';
 import LBCCard from "../../Components/Card/Card";
 import { Header } from "../../Module/Header/Header";
 import { LoginOverlay } from "../../Module/Login/Login";
-import { useNavigate } from "react-router-dom";
+import LBCOverlay from "../../Components/Overlay/Overlay";
+import { SignUp } from "../../Module/SignUp/SignUp";
 
 function HomePage (props) {
-
-	const navigate = useNavigate();
   
 	const [displayLogin, setDisplayLogin] = useState(false);
+	const [displaySignUp, setDisplaySignUp] = useState(false);
 
 	const handleLoginClick = () => {
 		setDisplayLogin(true);
@@ -20,7 +20,12 @@ function HomePage (props) {
 	}
 
 	const handleNewUserClick = () => {
-		navigate('/registerUser');
+		setDisplayLogin(false);
+		setDisplaySignUp(true);
+	}
+
+	const handleCloseSignUp = () => {
+		setDisplaySignUp(false);
 	}
 
 	return(<>
@@ -38,6 +43,9 @@ function HomePage (props) {
 					title={'Login !!!'}
 					handleNewUserClick={handleNewUserClick}
 				/>
+			}
+			{displaySignUp &&
+				<SignUp style_overlay={{width:'30%'}} open={displaySignUp} onClose={handleCloseSignUp} title={'Sign Up !!!'}/>
 			}
 		</>
 	</>);
