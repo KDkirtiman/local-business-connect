@@ -1,31 +1,24 @@
 import PropTypes from 'prop-types';
 import { AppBar, Button, IconButton, Toolbar, Typography } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import { ButtonStyle } from './Header.style';
 
 function Header(props) {
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{backgroundColor: "#3366ff"}}>
       <Toolbar>
-        <IconButton
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          sx={{ mr: 2 }}
-        >
-          <MenuIcon />
-        </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: "left" }}>
-          News
+          Home
         </Typography>
-        <Button color="inherit" onClick={()=>props.onClickLogin(true)}>Login</Button>
+        <Button color="inherit" onClick={()=>props.onClickLogin(true)} sx={ButtonStyle}>Login</Button>
+        <Button color="inherit" onClick={()=>props.onClickSignUp(true)} sx={ButtonStyle}>SignUp</Button>
       </Toolbar>
     </AppBar>
   );
 }
 
 Header.propTypes = {
-  onClickLogin: PropTypes.func
+  onClickLogin: PropTypes.func,
+  onClickSignUp: PropTypes.func
 }
 
 export { Header };

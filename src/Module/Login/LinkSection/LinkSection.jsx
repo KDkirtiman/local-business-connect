@@ -1,5 +1,5 @@
-import { Grid, Link } from '@mui/material';
 import PropTypes from 'prop-types';
+import { Grid } from '@mui/material';
 import { LinkSectionStyled } from './LinkSection.styled';
 
 function LinkSection(props) {
@@ -12,7 +12,7 @@ function LinkSection(props) {
           </LinkSectionStyled>
         </Grid>
         <Grid item>
-          <LinkSectionStyled variant="body2">
+          <LinkSectionStyled variant="body2" onClick={() => props.handleSignUpClick(true)}>
             {"Don't have an account? Sign Up"}
           </LinkSectionStyled>
         </Grid>
@@ -21,6 +21,8 @@ function LinkSection(props) {
   );
 }
 
-LinkSection.propTypes = {};
+LinkSection.propTypes = {
+  handleSignUpClick: PropTypes.func
+};
 
 export { LinkSection };

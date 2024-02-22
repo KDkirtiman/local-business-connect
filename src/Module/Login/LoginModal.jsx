@@ -4,7 +4,7 @@ import { Toast } from '../../Components/Toast/Toast';
 import { Backdrop, Box, CircularProgress, Container, Grid, Link, Modal, TextField, Typography } from '@mui/material';
 import { ERROR } from '../../Constant/ErrorConstant';
 import { ControlSection } from './ControlSection/ControlSection';
-import { loginBoxStyle } from './Login.style';
+import { LoginUpTitleStyle, loginBoxStyle } from './Login.style';
 import { authenticateUser } from '../../ApiRequest/AuthenticateUser/AuthenticateUser';
 import { LinkSection } from './LinkSection/LinkSection';
 
@@ -146,7 +146,7 @@ class LoginModal extends Component {
 
   render() {
     const {isLoading} = this.state;
-    const {isLogin, onClose} = this.props;
+    const {isLogin, onClose, handleSignUpClick} = this.props;
     return (
       <Modal open={isLogin} onClose={(_, reason) => {
           if (reason !== "backdropClick") {
@@ -156,7 +156,7 @@ class LoginModal extends Component {
       >
         <Container component="main" maxWidth={"xs"} sx={{backgroundColor: "#fff"}}>
           <Box sx={loginBoxStyle}>
-            <Typography component="h1" variant="h5" sx={{color: "#000", paddingTop: "0.5em"}}>
+            <Typography component="h1" variant="h5" sx={LoginUpTitleStyle}>
               Sign in
             </Typography>
             <Box sx={{ mt: 1 }}>
@@ -166,7 +166,7 @@ class LoginModal extends Component {
               {this.renderToastMessage()}
               {this.renderCredentialField()}
               <ControlSection handleSubmit={this.handleSubmit} handleClose={() => onClose(false)}/>
-              <LinkSection />
+              <LinkSection handleSignUpClick={handleSignUpClick}/>
             </Box>
           </Box>
         </Container>
@@ -177,7 +177,8 @@ class LoginModal extends Component {
 
 LoginModal.propTypes = {
   isLogin: PropTypes.bool,
-  onClose: PropTypes.func
+  onClose: PropTypes.func,
+  handleSignUpClick: PropTypes.func
 }
 
 export { LoginModal };
