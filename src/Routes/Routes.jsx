@@ -1,24 +1,13 @@
-import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import HomePage from '../Module/Home/Home';
-import ErrorRoutePage from '../Pages/Error/ErrorRoute';
+import ErrorRoutePage from '../Pages/Error/Error';
+import Landing from '../Pages/Landing/Landing';
 
-const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <HomePage/>,
+const router = createBrowserRouter ([
+  {
+    path: "/",
+    element: <Landing/>,
     errorElement: <ErrorRoutePage />
-	},
-	{
-		path: "/home",
-		element: <HomePage/>,
-    errorElement: <ErrorRoutePage />
-	},
-	// {
-	// 	path: "/profile",
-	// 	element: <Profile />,
-    // errorElement: <ErrorRoutePage />
-	// },
+  },
 ]);
 
 export default router;
