@@ -1,25 +1,13 @@
-import { useState } from 'react';
 import './App.css';
-import Practice from './Pages/Practice/Practice';
-import Landing from './Pages/Landing/Landing';
-import { Switch } from '@mui/material';
-
+import router from './Routes/Routes';
+import { RouterProvider } from 'react-router-dom';
 function App() {
 
-  const [showPractice, setShowPractice] = useState(false);
-
-  function handleChoice() {
-    setShowPractice((prevShowPractice) => !prevShowPractice);
-  }
-
   return (
-    <>
-      <div>
-        <Switch checked={showPractice} inputProps={{ 'aria-label': 'Practice' }} onChange={handleChoice}/> Practice
-      </div>
-      { showPractice ? <Practice/> : <Landing/>}
-    </>
-  )
+    <div className="App">
+      <RouterProvider router={router}/>
+    </div>
+  );
 }
 
 export default App

@@ -1,22 +1,30 @@
 import PropTypes from 'prop-types';
-import { Header } from '../../Components/Header/Header';
-import { LoginModal } from '../../Module/Login/Login';
 import { useState } from 'react';
+import { Header } from '../../Components/Header/Header';
+import { LoginModal } from '../../Module/Login/LoginModal';
+import { SignUp } from '../../Module/SignUp/SignUp';
 
 function Landing(props) {
-  const [isLogin, setIsLogin] = useState(true);
+  const [isLogin, setIsLogin] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(false); 
 
-  function handleOnClickLogin(open) {
-    setIsLogin(open);
+  function handleOnClickLogin(isOpen) {
+    setIsSignUp(false);
+    setIsLogin(isOpen);
+  }
+
+  function handleSignUpClick(isOpen) {
+    setIsSignUp(isOpen);
+    setIsLogin(false);
   }
 
   return (
-    <>
-      <h1>Welcome to Local Business Connect Connecting local businesses</h1>
-      <Header onClickLogin={handleOnClickLogin}/>
-      <LoginModal isLogin={isLogin} onClose={handleOnClickLogin}/>
+    <div>
+      <Header onClickLogin={handleOnClickLogin} onClickSignUp={handleSignUpClick}/>
+      <LoginModal isLogin={isLogin} onClose={handleOnClickLogin} handleSignUpClick={handleSignUpClick}/>
+      <SignUp isSignUp={isSignUp} onClose={handleSignUpClick} handleOnClickLogin={handleOnClickLogin}/>
       {props.children}
-    </>
+    </div>
   );
 }
 

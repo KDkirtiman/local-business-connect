@@ -5,4 +5,10 @@ const loginBoxStyle = {
   alignItems: "center",
 };
 
-export { loginBoxStyle };
+const LoginUpTitleStyle = {
+  color: "#1976d2",
+  fontFamily: "cursive",
+  paddingTop: "0.5em"
+}
+
+export { loginBoxStyle, LoginUpTitleStyle };
