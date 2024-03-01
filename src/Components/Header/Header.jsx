@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
-import { AppBar, Button, IconButton, Toolbar, Typography } from '@mui/material';
+import { AppBar, Button, Toolbar, Typography } from '@mui/material';
 import { ButtonStyle } from './Header.style';
+import { STYLE } from '../../Constant/StyleConstant';
 
 function Header(props) {
   return (
-    <AppBar position="static" sx={{backgroundColor: "#3366ff"}}>
-      <Toolbar>
+    <AppBar position="static" sx={{backgroundColor: STYLE.headerBackgroundColor}}>
+      <Toolbar style={{minHeight: "3em"}}>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: "left" }}>
           Home
         </Typography>
@@ -15,6 +16,8 @@ function Header(props) {
     </AppBar>
   );
 }
+
+
 
 Header.propTypes = {
   onClickLogin: PropTypes.func,
