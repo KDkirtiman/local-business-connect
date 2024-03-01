@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Header } from '../../Components/Header/Header';
 import { LoginModal } from '../../Module/Login/LoginModal';
 import { SignUp } from '../../Module/SignUp/SignUp';
+import { useNavigate } from 'react-router-dom';
 
 function Landing(props) {
   const [isLogin, setIsLogin] = useState(false);
@@ -21,7 +22,7 @@ function Landing(props) {
   return (
     <div>
       <Header onClickLogin={handleOnClickLogin} onClickSignUp={handleSignUpClick}/>
-      <LoginModal isLogin={isLogin} onClose={handleOnClickLogin} handleSignUpClick={handleSignUpClick}/>
+      <LoginModal isLogin={isLogin} onClose={handleOnClickLogin} handleSignUpClick={handleSignUpClick} navigate={useNavigate()}/>
       <SignUp isSignUp={isSignUp} onClose={handleSignUpClick} handleOnClickLogin={handleOnClickLogin}/>
       {props.children}
     </div>

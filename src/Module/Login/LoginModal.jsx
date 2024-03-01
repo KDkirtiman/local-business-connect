@@ -7,6 +7,7 @@ import { ControlSection } from './ControlSection/ControlSection';
 import { LoginUpTitleStyle, loginBoxStyle } from './Login.style';
 import { authenticateUser } from '../../ApiRequest/AuthenticateUser/AuthenticateUser';
 import { LinkSection } from './LinkSection/LinkSection';
+import { useNavigate } from 'react-router-dom';
 
 class LoginModal extends Component {
 
@@ -67,6 +68,7 @@ class LoginModal extends Component {
         });
 
         alert("User logged in successfully");
+        this.props.navigate('/dashboard');
       }
 
     }
@@ -178,7 +180,8 @@ class LoginModal extends Component {
 LoginModal.propTypes = {
   isLogin: PropTypes.bool,
   onClose: PropTypes.func,
-  handleSignUpClick: PropTypes.func
+  handleSignUpClick: PropTypes.func,
+  navigate: PropTypes.func
 }
 
 export { LoginModal };
