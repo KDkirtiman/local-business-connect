@@ -1,7 +1,8 @@
 import { AppBar, Autocomplete, Button, TextField, Toolbar } from "@mui/material";
-import { HomeWrapper, SearchBarWrapper } from "./AppHeader.styled";
+import { HomeWrapper, TextFieldStyle } from "./AppHeader.styled";
 import { STYLE } from "../../Constant/StyleConstant";
 import { AccountSection } from "./AccountSection/AccountSession";
+import { SearchBar } from "./SearchBar/SearchBar";
 
 function AppHeader(props) {
 
@@ -21,16 +22,16 @@ function AppHeader(props) {
               (params) => <div style={{padding: "0.5em"}}>
                 <TextField
                   {...params}
-                  InputLabelProps={{style:{color: "inherit"}}} 
-                  sx={{fontSize: "0.7em", fontWeight: "bold"}} 
+                  sx={TextFieldStyle} 
                   size={"small"} 
-                  variant={"outlined"} 
-                  label={"Location"} />
+                  variant={"outlined"}
+                  placeholder={"Location"}
+                />
               </div>
             }
           />
         </HomeWrapper>
-        <SearchBarWrapper>Item Search Bar</SearchBarWrapper>
+        <SearchBar/>
         <AccountSection/>
       </Toolbar>
     </AppBar>
