@@ -1,6 +1,6 @@
-import { Badge, Menu, MenuItem } from "@mui/material";
+import { Avatar, Badge, Divider, ListItemIcon, Menu, MenuItem } from "@mui/material";
 import { AccountMenuWrapper } from "../AppHeader.styled";
-import { AccountCircle } from "@mui/icons-material";
+import { AccountCircle, Logout, PersonAdd, Settings } from "@mui/icons-material";
 import { useState } from "react";
 
 function AccountSection(props) {
@@ -22,13 +22,69 @@ function AccountSection(props) {
       <Menu
         open={isMenuOpen}
         anchorEl={anchorEl}
+        id="account-menu"
         onClose={handleMenuClose}
+        onClick={handleMenuClose}
+        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+        PaperProps={{
+          elevation: 0,
+          sx: {
+            overflow: 'visible',
+            filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+            mt: 1.5,
+            '& .MuiAvatar-root': {
+              width: 32,
+              height: 32,
+              ml: -0.5,
+              mr: 1,
+            },
+            '&::before': {
+              content: '""',
+              display: 'block',
+              position: 'absolute',
+              top: 0,
+              right: 14,
+              width: 10,
+              height: 10,
+              bgcolor: 'background.paper',
+              transform: 'translateY(-50%) rotate(45deg)',
+              zIndex: 0,
+            },
+          },
+        }}
       >
-        <MenuItem>Account</MenuItem>
-        <MenuItem>Orders</MenuItem>
-        <MenuItem>Wishlist</MenuItem>
-        <MenuItem>Cart</MenuItem>
-        <MenuItem>Settings</MenuItem>
+        <MenuItem onClick={handleMenuClose}>
+          <ListItemIcon style={{paddingRight: "1em"}}>
+            <Avatar />
+          </ListItemIcon>
+          Profile
+        </MenuItem>
+        <MenuItem onClick={handleMenuClose}>
+          <ListItemIcon style={{paddingRight: "1em"}}>
+            <Avatar />
+          </ListItemIcon>
+          My account
+        </MenuItem>
+        <MenuItem onClick={handleMenuClose}>
+          <ListItemIcon style={{paddingRight: "1em"}}>
+            <PersonAdd fontSize="small" />
+          </ListItemIcon>
+          Add another account
+        </MenuItem>
+        <Divider />
+        <MenuItem onClick={handleMenuClose}>
+          <ListItemIcon style={{paddingRight: "1em"}}>
+            <Settings fontSize="small" />
+          </ListItemIcon>
+          Settings
+        </MenuItem>
+        <MenuItem onClick={handleMenuClose}>
+          <ListItemIcon style={{paddingRight: "1em"}}>
+            <Logout fontSize="small" />
+          </ListItemIcon>
+          Logout
+        </MenuItem>
       </Menu>
     );
   }
