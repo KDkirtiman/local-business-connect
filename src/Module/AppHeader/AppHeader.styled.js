@@ -15,13 +15,13 @@ const AcountMenuWrapper = styled.div`
 `;
 
 const TextFieldStyle = {
-  fontSize: "0.7em",
   fontWeight: "bold",
   border: `0.2em solid black`,
   borderRadius: "0.5em",
 
   "input": {
       "&::placeholder": {
+        fontSize: "0.8em",
         color: "white"
       }
   }

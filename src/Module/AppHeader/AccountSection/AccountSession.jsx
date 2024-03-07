@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import { Avatar, Badge, Divider, ListItemIcon, Menu, MenuItem } from "@mui/material";
 import { AccountMenuWrapper } from "../AppHeader.styled";
-import { AccountCircle, Logout, PersonAdd, Settings } from "@mui/icons-material";
+import { AccountCircle, Logout, Settings, Store } from "@mui/icons-material";
 import { useState } from "react";
 
 function AccountSection(props) {
@@ -68,9 +69,9 @@ function AccountSection(props) {
         </MenuItem>
         <MenuItem onClick={handleMenuClose}>
           <ListItemIcon style={{paddingRight: "1em"}}>
-            <PersonAdd fontSize="small" />
+            <Store fontSize="small" />
           </ListItemIcon>
-          Add another account
+          Onboard Your Business
         </MenuItem>
         <Divider />
         <MenuItem onClick={handleMenuClose}>
@@ -91,12 +92,20 @@ function AccountSection(props) {
 
   return (
     <AccountMenuWrapper>
-      <Badge badgeContent={20} color="error" onClick={handleOnAccountClick}>
+      <Badge badgeContent={props.notificatonCount} color="error" onClick={handleOnAccountClick}>
         <AccountCircle sx={{fontSize: "2em"}}/>
       </Badge>
       {renderMenu()}
     </AccountMenuWrapper>
   );
+}
+
+AccountSection.propTypes = {
+  notificatonCount: PropTypes.number
+}
+
+AccountSection.defaultProps = {
+  notificatonCount: 0
 }
 
 export { AccountSection }
