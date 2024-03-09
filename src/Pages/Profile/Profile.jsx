@@ -1,5 +1,6 @@
 import { ExpandMore } from "@mui/icons-material";
 import { Accordion, AccordionDetails, AccordionSummary, Card, CardContent, Divider } from "@mui/material";
+import { AccountInformation } from "./AccountInformation/AccountInformation";
 
 function Profile(props) {
   return (
@@ -21,14 +22,7 @@ function Profile(props) {
             Address Information
           </AccordionDetails>
         </Accordion>
-        <Accordion>
-          <AccordionSummary expandIcon={<ExpandMore />}>
-            Account Information
-          </AccordionSummary>
-          <AccordionDetails>
-            Account Information
-          </AccordionDetails>
-        </Accordion>
+        <AccountInformation/>
       </CardContent>
     </Card>
   );
