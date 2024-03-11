@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const AccountInformationWrapper = styled.div`
+const AddressInformationWrapper = styled.div`
   text-align: left;
   display: flex;
   flex-direction: column;
 `;
 
-export {AccountInformationWrapper};
+export { AddressInformationWrapper }

@@ -2,8 +2,9 @@ import { ExpandMore } from "@mui/icons-material";
 import { Accordion, AccordionActions, AccordionDetails, AccordionSummary, Backdrop, Box, Button, CircularProgress, Divider, FormControl, InputLabel, MenuItem, Select, Typography } from "@mui/material";
 import { useState } from "react";
 import { Toast } from "../../../Components/Toast/Toast";
-import { AccountInformationWrapper, TextfieldInput } from "./AccountInformation.style";
+import { AccountInformationWrapper } from "./AccountInformation.style";
 import { ERROR } from "../../../Constant/ErrorConstant";
+import { TextfieldInput } from "../Profile.style";
 
 function AccountInformation(props) {
 
@@ -57,6 +58,14 @@ function AccountInformation(props) {
   }
 
   function handleOnChangeAccountStatus(value) {
+    setUserAccountInfo((prevUserAccountInfo)=> {
+      return (
+        {
+          ...prevUserAccountInfo,
+          accountStatus: value
+        }
+      );
+    });
   }
 
   function renderToastMessage() {
@@ -76,13 +85,13 @@ function AccountInformation(props) {
 
   function renderAccountLayout() {
     const {userNameValidated=true, passwordValidated=true} = validateInput;
+    const {accountStatus="active"} = userAccountInfo;
     return (
       <AccountInformationWrapper>
         <TextfieldInput
           error={!userNameValidated}
           margin="dense"
           required
-          fullWidth
           id="username"
           label="Username"
           name="userName"
@@ -97,7 +106,6 @@ function AccountInformation(props) {
           error={!passwordValidated}
           margin="dense"
           required
-          fullWidth
           name="password"
           label="Password"
           type="password"
@@ -131,14 +139,15 @@ function AccountInformation(props) {
             margin="dense"
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={"active"}
+            value={accountStatus}
             label="Account Status"
+            sx={{width: "30%"}}
             inputProps={{
               readOnly: !isEdit
             }}
           >
-            <MenuItem value={"active"}>Active</MenuItem>
-            <MenuItem value={"deactivated"}>Deactivated</MenuItem>
+            <MenuItem value={"active"} onClick={() => handleOnChangeAccountStatus("active")}>Active</MenuItem>
+            <MenuItem value={"deactivated"} onClick={() => handleOnChangeAccountStatus("deactivated")}>Deactivated</MenuItem>
           </Select>
         </FormControl>
       </AccountInformationWrapper>
