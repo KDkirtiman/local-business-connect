@@ -1,27 +1,14 @@
-import { ExpandMore } from "@mui/icons-material";
-import { Accordion, AccordionDetails, AccordionSummary, Card, CardContent, Divider } from "@mui/material";
+import {  Card, CardContent } from "@mui/material";
 import { AccountInformation } from "./AccountInformation/AccountInformation";
+import { AddressInformation } from "./AddressInformation/AddressInformation";
+import { PersonalInfromation } from "./PersonalInformation/PersonalInfromation";
 
 function Profile(props) {
   return (
     <Card sx={{height: "100%"}}>
       <CardContent>
-        <Accordion>
-          <AccordionSummary expandIcon={<ExpandMore />}>
-            Personal Information
-          </AccordionSummary>
-          <AccordionDetails>
-            Personal Information
-          </AccordionDetails>
-        </Accordion>
-        <Accordion>
-          <AccordionSummary expandIcon={<ExpandMore />}>
-            Address Information
-          </AccordionSummary>
-          <AccordionDetails>
-            Address Information
-          </AccordionDetails>
-        </Accordion>
+        <PersonalInfromation/>
+        <AddressInformation/>
         <AccountInformation/>
       </CardContent>
     </Card>
